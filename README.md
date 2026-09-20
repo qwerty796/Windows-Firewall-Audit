@@ -9,6 +9,7 @@ Tool: PowerShell
 
 
 
+
 1. Firewall Profiles
 Get-NetFirewallProfile
 
