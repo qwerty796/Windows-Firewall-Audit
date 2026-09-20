@@ -28,7 +28,7 @@ Get-NetFirewallRule -Enabled True |
 Select-Object -First 10 DisplayName, Direction, Action, Enabled
 
 Used to review a sample of enabled inbound and outbound firewall rules.
-
+![Firewall Rules](screenshots/firewall-rules.png)
 
 
 
@@ -37,7 +37,7 @@ Get-MpComputerStatus |
 Select-Object AntivirusEnabled, RealTimeProtectionEnabled, AntispywareEnabled, AMServiceEnabled
 
 Used to check the status of key Windows Defender protection components.
-
+![Windows Defender Status](screenshots/defender-status.png)
 
 
 
@@ -46,7 +46,7 @@ Get-LocalUser |
 Select-Object Name, Enabled, LastLogon
 
 Used to review local user accounts and their status.
-
+![Local Users](screenshots/local-users.png)
 
 
 
@@ -55,7 +55,7 @@ Get-ComputerInfo |
 Select-Object WindowsProductName, WindowsVersion, OsArchitecture, CsName
 
 Used to collect basic Windows system information.
-
+![System Information](screenshots/system-info.png)
 
 
 
@@ -64,3 +64,4 @@ Get-NetIPConfiguration |
 Select-Object InterfaceAlias, IPv4Address, IPv4DefaultGateway, DNSServer
 
 Used to inspect network interfaces, IPv4 configuration, gateway, and DNS settings.
+![Network Configuration](screenshots/network-config.png)
