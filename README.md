@@ -2,14 +2,7 @@ Windows Security Audit
 
 A practical Windows security audit performed using PowerShell. The project covers firewall configuration, Windows Defender status, local user accounts, system information, and network configuration.
 
-Objectives
 
-Inspect Windows security configuration
-Review firewall profiles and enabled rules
-Check Windows Defender protection status
-Review local user accounts
-Collect system and network information
-Practice PowerShell for Windows administration and security auditing
 Environment
 OS: Windows 11
 Tool: PowerShell
