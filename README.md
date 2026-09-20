@@ -4,7 +4,9 @@ A practical Windows security audit performed using PowerShell. The project cover
 
 
 Environment
+
 OS: Windows 11
+
 Tool: PowerShell
 
 
