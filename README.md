@@ -1,46 +1,66 @@
-Windows Firewall Security Audit
+Windows Security Audit
 
-This project demonstrates a basic security audit of Windows Defender Firewall using PowerShell. The goal is to inspect firewall profiles, review firewall rules, and understand the basic security configuration of a Windows system.
+A practical Windows security audit performed using PowerShell. The project covers firewall configuration, Windows Defender status, local user accounts, system information, and network configuration.
 
 Objectives
-Check the status of Windows Firewall profiles.
-Review inbound and outbound firewall policies.
-Inspect configured firewall rules.
-Practice PowerShell commands used for Windows security administration.
-Document the results of the security audit.
-Tools
-Windows 10/11
-Windows PowerShell
-Windows Defender Firewall
-Commands Used
+Inspect Windows security configuration
+Review firewall profiles and enabled rules
+Check Windows Defender protection status
+Review local user accounts
+Collect system and network information
+Practice PowerShell for Windows administration and security auditing
+Environment
+OS: Windows 11
+Tool: PowerShell
+
+
+
+1. Firewall Profiles
 Get-NetFirewallProfile
-Get-NetFirewallRule
-Results
 
-The firewall profiles and configured firewall rules were inspected using PowerShell.
-
-Firewall Profiles
-
-The "Get-NetFirewallProfile" command was used to examine the Domain, Private, and Public firewall profiles.
+Used to review the Domain, Private, and Public firewall profiles.
+![Firewall Profiles](screenshots/firewall-profiles.png)
 
 
 
-Firewall Rules
+2. Firewall Rules
+Get-NetFirewallRule -Enabled True |
+Select-Object -First 10 DisplayName, Direction, Action, Enabled
 
-The "Get-NetFirewallRule" command was used to inspect the firewall rules configured on the system.
+Used to review a sample of enabled inbound and outbound firewall rules.
 
 
 
-Skills Demonstrated
 
-PowerShell
+3. Windows Defender Status
+Get-MpComputerStatus |
+Select-Object AntivirusEnabled, RealTimeProtectionEnabled, AntispywareEnabled, AMServiceEnabled
 
-Windows Administration
+Used to check the status of key Windows Defender protection components.
 
-Windows Defender Firewall
 
-Basic Network Security
 
-Security Configuration Analysis
 
-Technical Documentation
+4. Local Users
+Get-LocalUser |
+Select-Object Name, Enabled, LastLogon
+
+Used to review local user accounts and their status.
+
+
+
+
+5. System Information
+Get-ComputerInfo |
+Select-Object WindowsProductName, WindowsVersion, OsArchitecture, CsName
+
+Used to collect basic Windows system information.
+
+
+
+
+6. Network Configuration
+Get-NetIPConfiguration |
+Select-Object InterfaceAlias, IPv4Address, IPv4DefaultGateway, DNSServer
+
+Used to inspect network interfaces, IPv4 configuration, gateway, and DNS settings.
